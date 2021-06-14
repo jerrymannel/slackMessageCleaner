@@ -31,9 +31,9 @@ USER_COOKIE=xxxx
 
 When you have to find the groupID or conversation id, you don't always have to open the browser Developer tools. Instead, check the URL.
 
-![Slack URL](./images/slackURL.png "Slack URL")
+<img src="./images/slackURL.png" alt="Slack URL" width="400"/>
 
-The option in red is the conversation or group ID.
+The part in red is the conversation or group ID.
 
 # Setting up the code.
 
