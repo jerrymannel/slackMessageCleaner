@@ -29,7 +29,8 @@ async function deleteMessage(channelID, messageIDsToDelete) {
 	  let response = await axios.post("https://appveen.slack.com/api/chat.delete", form, {headers: headers});
   	// console.log(`Delete ${channelID} ${c} ${response.statusText}`)
   	bar.tick()
-  	return response
+  	// return response
+	return new Promise(resolve => setTimeout(resolve, 500));
   }, Promise.resolve())
 }
 
@@ -59,8 +60,9 @@ async function getMessages(channelID, retentionDays){
   })
   if(messageIDsToDelete.length > 0 ) {
   	await deleteMessage(channelID, messageIDsToDelete)
-  	console.log("Waiting 10s and fetching messages")
-  	setTimeout(() => getMessages(channelID), 10000)
+  	// console.log("Waiting 10s and fetching messages")
+  	// setTimeout(() => getMessages(channelID), 10000)
+	getMessages(channelID, retentionDays)
   } else console.log("No more messages to clear")
 }
 
